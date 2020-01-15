@@ -1,0 +1,20 @@
+* Prepare data
+	1. mkdir data
+	2. cd data
+	3. Put "task2_public_testset.csv" and "task2_trainset.csv" into data
+	4. wget https://storage.googleapis.com/bert_models/2018_10_18/uncased_L-12_H-768_A-12.zip
+	5. unzip -j uncased_L-12_H-768_A-12.zip
+	6. You can also download our pretrained weight by
+		wget https://www.csie.ntu.edu.tw/~b06902024/pretrain_bert_24_v2.weight
+
+* Install environment
+	pip3 install pandas nltk tqdm
+	pip3 install tensorflow==2.0.0 keras_bert keras
+
+* Start training
+	Run the following scripts:
+	cd src
+	python3 pretrain.py [pretrain_weight_path]
+	python3 train.py [pretrain_weight_path] [train_weight_path]
+	python3 submit.py [result.csv]
+
